@@ -1,0 +1,16 @@
+#File locations
+JCCLoc=/msu/res1/Software/javaCC/javacc-5.0
+JCC=$(JCCLoc)/bin/javacc
+PFILELoc=./modelEZ/src/gov/frb/ma/msu/toC
+JCCGen= TokenMgrError.java Token.java SimpleCharStream.java\
+ ParseException.java AMAtoCTokenManager.java AMAtoCConstants.java AMAtoC.java
+JCCHelp=$(wildcard $(PFileLoc)/*.java))
+JCCInput=$(PFILELoc)/AMAtoC.jj $(JCCHelp)
+
+modelEZtoC.jar	: $(PFILELoc)/AMAtoC.java
+				(cd ./modelEZ/src;javac -cp $(JCCLoc)/bin/lib/javacc.jar */*/*/*/*/*.java)
+				(cd ./modelEZ/src;jar cvf ../../modelEZtoC.jar .)
+
+
+AMAtoC.java :	$(PFILELoc)/AMAModelEZtoC.jj
+			(cd $(PFILELoc)/;rm -f $(JCCGen);$(JCC)	AMAModelEZtoC.jj)
