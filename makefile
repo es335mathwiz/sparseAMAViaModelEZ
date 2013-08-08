@@ -1,6 +1,6 @@
 #File Locations
 LAPACKLIBS=  -L/opt/atlas/lib/ -lcblas -lf77blas -latlas -llapack
-SPAMADIR=../sparseAMAFiles
+SPAMADIR=./sparseAMA
 
 PARAMFILENAME=$(MODNAME)_AMA_SetAllParamsZero
 LOBJS = $(MODNAME)_AMA_template.o $(MODNAME)_AMA_matrices.o $(PARAMFILENAME).o
@@ -34,19 +34,21 @@ $(MODNAME)_AMA_matrices.o : $(MODNAME)_AMA_matrices.c
 
 clean:
 	rm -f $(LOBJS) 
+	mv reasonableParams.f90 keepItNIXON
 	rm -f *.f90
 	rm -f *.c
 	rm -f *.o
 	rm -f RUN*
-	cp ../reasonableParams.f90 .
+	mv keepItNIXON reasonableParams.f90
 
 distclean:
 	rm -f $(LOBJS) $(FOBJS) $(COBJS)
+	mv reasonableParams.f90 keepItNIXON
 	rm -f *.f90
 	rm -f *.c
 	rm -f *.o
 	rm -f RUN*
-	cp ../reasonableParams.f90 .
+	mv keepItNIXON reasonableParams.f90
 
 echo:
 	echo $(LOBJS)
