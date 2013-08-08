@@ -1,0 +1,6 @@
+[submodule "sparseAMA"]
+	path = sparseAMA
+	url = https://github.com/es335mathwiz/sparseAMA.git
+[submodule "modelEZ"]
+	path = modelEZ
+	url = https://github.com/es335mathwiz/modelEZ.git
