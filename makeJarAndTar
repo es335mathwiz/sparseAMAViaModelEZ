@@ -18,6 +18,6 @@ modelEZtoC.jar	: $(PFILELoc)/AMAtoC.java
 				(cd ./modelEZ/src;jar cvf ../../modelEZtoC.jar .)
 
 
-AMAtoC.java :	$(PFILELoc)/AMAModelEZtoC.jj
+$(PFILELoc)/AMAtoC.java :	$(PFILELoc)/AMAModelEZtoC.jj
 			(cd $(PFILELoc)/;rm -f $(JCCGen);$(JCC)	AMAModelEZtoC.jj)
 
