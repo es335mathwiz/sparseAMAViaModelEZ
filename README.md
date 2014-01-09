@@ -18,7 +18,8 @@ chmod +x ./generateModelCode.sh
 
 
 
+
 ./generateModelCode.sh stickywage reasonableParams %this should create the program RUNstickwage 
-./RUNstickywage  runs the program with all parameters set by the f90 program reasonableParams
+./RUNstickywage  runs the program with all parameters set by the rzero producing no errors and no output
 
 
