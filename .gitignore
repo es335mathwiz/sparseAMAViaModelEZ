@@ -1,0 +1,16 @@
+RUNmodelv3
+RUNstickywage
+modelv3_AMA_SetAllParamsZero.f90
+modelv3_AMA_SetAllParamsZero.o
+modelv3_AMA_matrices.c
+modelv3_AMA_matrices.o
+modelv3_AMA_template.f90
+modelv3_AMA_template.o
+reasonableParams.o
+stickywage_AMA_SetAllParamsZero.f90
+stickywage_AMA_SetAllParamsZero.o
+stickywage_AMA_data.c
+stickywage_AMA_matrices.c
+stickywage_AMA_matrices.o
+stickywage_AMA_template.f90
+stickywage_AMA_template.o
