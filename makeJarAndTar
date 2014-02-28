@@ -8,16 +8,17 @@ JCCHelp=$(wildcard $(PFileLoc)/*.java))
 JCCInput=$(PFILELoc)/AMAtoC.jj $(JCCHelp)
 
 
-../sparseAMAParser.tar:			modelEZtoC.jar
-								(cd ..; tar cvf sparseAMAPParser.tar cloneSubmodules)
-
-
-
 modelEZtoC.jar	: $(PFILELoc)/AMAtoC.java
-				(cd ./modelEZ/src;javac -cp $(JCCLoc)/bin/lib/javacc.jar */*/*/*/*/*.java)
-				(cd ./modelEZ/src;jar cvf ../../modelEZtoC.jar .)
+				(cd ./modelEZ/src;javac -cp $(JCCLoc)/bin/lib/javacc.jar gov/frb/ma/msu/toC/*.java gov/frb/ma/msu/modelEZCommon/*.java;jar cvf ../../modelEZtoC.jar .)
 
-
-AMAtoC.java :	$(PFILELoc)/AMAModelEZtoC.jj
+$(PFILELoc)/AMAtoC.java :	$(PFILELoc)/AMAModelEZtoC.jj
 			(cd $(PFILELoc)/;rm -f $(JCCGen);$(JCC)	AMAModelEZtoC.jj)
+
+clean :
+	  rm -f modelEZtoC.jar
+
+../sparseAMAParser.tar:			modelEZtoC.jar
+								(cd ..; tar cvf sparseAMAParser.tar cloneSubmodules)
+
+
 
