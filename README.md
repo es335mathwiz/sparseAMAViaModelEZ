@@ -33,3 +33,14 @@ git pull
 git submodule update --recursive
 
 The second command here updates the submodules.
+
+
+If that doesn't work, 
+The following should work:
+
+cd modelEZ
+
+git checkout develop
+It does seem that git submodules automatically point to the commit they were on when the submodule tree was created.
+And by default they have no branch, which is why "git pull" doesn't work.
+So git checkout develop should do the trick
